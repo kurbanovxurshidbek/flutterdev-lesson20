@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 import '../models/random_user_list_res.dart';
 
-Widget itemOfRandomUser(RandomUser randomUser) {
+Widget itemOfRandomUser(RandomUser randomUser, int index) {
   return Container(
       color: Colors.white,
       margin: const EdgeInsets.only(top: 5),
@@ -21,9 +21,6 @@ Widget itemOfRandomUser(RandomUser randomUser) {
               height: 80,
               width: 80,
               color: Colors.grey,
-              child: const Center(
-                child: CircularProgressIndicator(),
-              ),
             ),
             errorWidget: (context, url, error) => Container(
               height: 80,
@@ -41,7 +38,7 @@ Widget itemOfRandomUser(RandomUser randomUser) {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "${randomUser.name.first} ${randomUser.name.last}",
+                  "${index} - ${randomUser.name.first} ${randomUser.name.last}",
                   style: const TextStyle(
                       fontWeight: FontWeight.bold, fontSize: 20),
                 ),
